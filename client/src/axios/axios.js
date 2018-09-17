@@ -19,4 +19,3 @@ export const axiosTagsInstance = axios.create({
 export const axiosProfileInstance = axios.create({
     baseURL: apiURL + "/profile",
 });
-
