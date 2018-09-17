@@ -75,7 +75,7 @@ class Layout extends Component {
     render() {
         return (
             <Aux>
-                <header>
+                {this.props.isAuth? <header>
                     <ToolBar isAuth={this.props.isAuth} click={this.props.onLogout}
                              label="התנתק"
                              onTitleClick={this.goHomePage}
@@ -102,7 +102,7 @@ class Layout extends Component {
                             <img src={logo} alt="LOGO" style={{width: "100%", position: "fixed", bottom: "20px"}}/>
                         </div>
                     </SideDrawer>
-                </header>
+                </header>: null}
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
