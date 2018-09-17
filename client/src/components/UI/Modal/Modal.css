@@ -1,0 +1,62 @@
+.ModalButton {
+    font-family: "Roboto", Arial, sans-serif;
+    color: #000000;
+    cursor: pointer;
+    padding: 0px 30px;
+    display: inline-block;
+    margin: 10px 15px;
+    text-transform: uppercase;
+    line-height: 2em;
+    letter-spacing: 1.5px;
+    font-size: 1em;
+    outline: none;
+    position: relative;
+    border: 3px solid #cfcece;
+    background-color: #ffffff;
+    border-radius: 15px 15px 15px 15px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.ModalButton:hover,
+.ModalButton.hover {
+    border-color: #2980b9;
+}
+
+
+
+.Modal {
+    font-size: 12px;
+}
+.Modal > .Header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    /*font-size: 18px;*/
+    text-align: center;
+    padding: 5px;
+}
+.Modal > .Content {
+    width: 100%;
+    padding: 5px 5px;
+}
+.Modal > .Actions {
+    margin: auto;
+}
+.Modal > .Actions {
+    width: 100%;
+    padding: 10px 5px;
+    text-align: center;
+}
+.Modal > .Close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+}

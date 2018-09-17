@@ -1,0 +1,87 @@
+.Card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-sizing: border-box;
+    margin: 10px 10px;
+
+    box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.RecipeImg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    order: 0;
+}
+
+.ImgWrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.ImgOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    padding: 10px;
+}
+
+.ImgOverlay:before {
+    content: ' ';
+    display: block;
+    height: 5%;
+}
+
+.ImgEdit {
+    width: 28%;
+    cursor: pointer;
+}
+
+.Card > h1 {
+    order: 1;
+    margin: 0;
+    font-size: 20px;
+    padding: 10px;
+    font-family: 'Assistant', sans-serif;
+}
+
+.Separator {
+    height: 1px;
+    background-color: #4261e7;
+    order: 4;
+}
+
+.Author {
+    order: 2;
+    margin: 4px;
+}
+
+.Content {
+    order: 5;
+    white-space: pre-line;
+    padding: 10px;
+    font-family: 'Tinos', serif;
+}
+
+.Tags {
+    order: 3;
+    display: flex;
+    direction: rtl;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 700px) {
+    .Card {
+        width: 70%;
+        margin: 10px auto;
+    }
+
+    .Card:last-child {
+        margin-bottom: 10px;
+    }
+
+}

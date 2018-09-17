@@ -1,0 +1,255 @@
+:global .rc-pagination {
+    font-size: 12px;
+    font-family: 'Arial';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0;
+    margin: auto;
+}
+:global .rc-pagination > li {
+    list-style: none;
+}
+:global .rc-pagination-total-text {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0 8px 0 0;
+}
+:global .rc-pagination:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+:global .rc-pagination-item {
+    cursor: pointer;
+    border-radius: 6px;
+    min-width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    list-style: none;
+    float: left;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    margin-right: 8px;
+}
+:global .rc-pagination-item a {
+    text-decoration: none;
+    color: #666;
+}
+:global .rc-pagination-item:hover {
+    border-color: #2db7f5;
+}
+:global .rc-pagination-item:hover a {
+    color: #2db7f5;
+}
+:global .rc-pagination-item-active {
+    background-color: #2db7f5;
+    border-color: #2db7f5;
+}
+:global .rc-pagination-item-active a {
+    color: #fff;
+}
+:global .rc-pagination-item-active:hover a {
+    color: #fff;
+}
+:global .rc-pagination-jump-prev:after,
+:global .rc-pagination-jump-next:after {
+    content: "•••";
+    display: block;
+    letter-spacing: 2px;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 1px;
+}
+:global .rc-pagination-jump-prev:hover:after,
+:global .rc-pagination-jump-next:hover:after {
+    color: #2db7f5;
+}
+:global .rc-pagination-jump-prev:hover:after {
+    content: "«";
+}
+:global .rc-pagination-jump-next:hover:after {
+    content: "»";
+}
+:global .rc-pagination-prev,
+:global .rc-pagination-jump-prev,
+:global .rc-pagination-jump-next {
+    margin-right: 8px;
+}
+:global .rc-pagination-prev,
+:global .rc-pagination-next,
+:global .rc-pagination-jump-prev,
+:global .rc-pagination-jump-next {
+    cursor: pointer;
+    color: #666;
+    font-size: 10px;
+    border-radius: 6px;
+    list-style: none;
+    min-width: 28px;
+    height: 28px;
+    line-height: 28px;
+    float: left;
+    text-align: center;
+}
+:global .rc-pagination-prev a:after {
+    content: "‹";
+    display: block;
+}
+:global .rc-pagination-next a:after {
+    content: "›";
+    display: block;
+}
+:global .rc-pagination-prev,
+:global .rc-pagination-next {
+    border: 1px solid #d9d9d9;
+    font-size: 18px;
+}
+:global .rc-pagination-prev a,
+:global .rc-pagination-next a {
+    color: #666;
+}
+:global .rc-pagination-prev a:after,
+:global .rc-pagination-next a:after {
+    margin-top: -1px;
+}
+:global .rc-pagination-disabled {
+    cursor: not-allowed;
+}
+:global .rc-pagination-disabled a {
+    color: #ccc;
+}
+:global .rc-pagination-options {
+    float: left;
+    margin-left: 15px;
+}
+:global .rc-pagination-options-size-changer {
+    float: left;
+    width: 80px;
+}
+:global .rc-pagination-options-quick-jumper {
+    float: left;
+    margin-left: 16px;
+    height: 28px;
+    line-height: 28px;
+}
+:global .rc-pagination-options-quick-jumper input {
+    margin: 0 8px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #d9d9d9;
+    outline: none;
+    padding: 3px 12px;
+    width: 50px;
+    height: 28px;
+}
+:global .rc-pagination-options-quick-jumper input:hover {
+    border-color: #2db7f5;
+}
+:global .rc-pagination-options-quick-jumper button {
+    display: inline-block;
+    margin: 0 8px;
+    font-weight: 500;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 0 15px;
+    font-size: 12px;
+    border-radius: 6px;
+    height: 28px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    position: relative;
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
+:global .rc-pagination-options-quick-jumper button:hover,
+:global .rc-pagination-options-quick-jumper button:active,
+:global .rc-pagination-options-quick-jumper button:focus {
+    color: #2db7f5;
+    background-color: #fff;
+    border-color: #2db7f5;
+}
+:global .rc-pagination-simple :global .rc-pagination-prev,
+:global .rc-pagination-simple :global .rc-pagination-next {
+    border: none;
+    height: 24px;
+    line-height: 24px;
+    margin: 0;
+    font-size: 18px;
+}
+:global .rc-pagination-simple :global .rc-pagination-simple-pager {
+    float: left;
+    margin-right: 8px;
+    list-style: none;
+}
+:global .rc-pagination-simple :global .rc-pagination-simple-pager :global .rc-pagination-slash {
+    margin: 0 10px;
+}
+:global .rc-pagination-simple :global .rc-pagination-simple-pager input {
+    margin: 0 8px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #d9d9d9;
+    outline: none;
+    padding: 5px 8px;
+    min-height: 20px;
+}
+:global .rc-pagination-simple :global .rc-pagination-simple-pager input:hover {
+    border-color: #2db7f5;
+}
+:global .rc-pagination-simple :global .rc-pagination-simple-pager button {
+    display: inline-block;
+    margin: 0 8px;
+    font-weight: 500;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 0 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    height: 26px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    position: relative;
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
+:global .rc-pagination-simple :global .rc-pagination-simple-pager button:hover,
+:global .rc-pagination-simple :global .rc-pagination-simple-pager button:active,
+:global .rc-pagination-simple :global .rc-pagination-simple-pager button:focus {
+    color: #2db7f5;
+    background-color: #fff;
+    border-color: #2db7f5;
+}
+@media only screen and (max-width: 1024px) {
+    :global .rc-pagination-item-after-jump-prev,
+    :global .rc-pagination-item-before-jump-next {
+        display: none;
+    }
+}

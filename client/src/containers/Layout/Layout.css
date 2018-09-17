@@ -1,0 +1,19 @@
+.Content {
+    position: fixed;
+    overflow: auto;
+    height: calc(100% - 64px);
+    width: 100%;
+    box-sizing: border-box;
+    background: #b388ff local repeat;
+    color: #485e74;
+    line-height: 1.6;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 64px;
+}
+
+.AvatarImg{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+}

@@ -1,0 +1,49 @@
+.CommentsForm {
+    box-sizing: border-box;
+    padding: 10px;
+
+    background: #222;
+    color: white;
+    margin: 10px 10px;
+}
+
+form {
+    display: flex;
+}
+
+.CommentsFormErea {
+    flex: 1;
+    resize: none;
+}
+
+.leaveComment{
+    margin-left: 5px;
+}
+
+.addCommentHeader{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-bottom: inherit;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #008CBA;
+    width: 100px;
+    height: 50px;
+}
+
+@media screen and (min-width: 700px) {
+    .CommentsForm {
+        width: 70%;
+        margin: 10px auto;
+    }
+}

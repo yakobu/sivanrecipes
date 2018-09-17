@@ -1,0 +1,16 @@
+.Content{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto
+}
+
+
+.Selector{
+    margin: 10px;
+}
+
+.Paging{
+    display: flex;
+    margin-bottom:80px;
+    margin-top: 50px
+}

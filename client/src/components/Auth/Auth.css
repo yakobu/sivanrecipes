@@ -1,0 +1,58 @@
+.Auth {
+    display: grid;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    box-sizing: border-box;
+    grid-template-rows: auto 1fr;
+}
+
+.Auth .Content {
+    box-shadow: 0 0 20px rgba(72, 94, 116, 0.7);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+}
+
+.Auth .Content > * {
+    padding: 1em;
+}
+
+.UserAuthDetails {
+    background: #f9feff;
+    display: flex;
+}
+
+.UserAuthDetails form {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.UserAuthDetails form > * {
+    margin: 10px;
+}
+
+.SwitchStateButton {
+    width: 100%;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0px;
+    white-space: nowrap
+}
+
+@media screen and (min-width: 700px) {
+    .Auth .Content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .Auth .Content > * {
+        padding: 2em;
+    }
+}
+

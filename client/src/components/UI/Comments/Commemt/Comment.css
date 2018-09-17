@@ -1,0 +1,44 @@
+.UserComments{
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'Frank Ruhl Libre', serif;
+    background: #222;
+    color: white;
+    margin: 10px 10px;
+}
+
+.commentUser {
+    display: flex;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+
+.commentUser {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.commentUsername {
+    margin-right: 5px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.commentText {
+    background: white;
+    color: #222;
+    padding: 20px;
+}
+
+.commentImage{
+    width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+    .UserComments{
+        width: 70%;
+        margin: 10px auto;
+    }
+}
