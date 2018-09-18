@@ -1,6 +1,10 @@
+.ContactInfo{
+    background-color: lightskyblue;
+}
 .ContactInfo ul, .ContactInfo h3 {
     text-align: center;
     margin: 0 0 1rem 0;
+    color: white;
 }
 
 .SivanInfo {
