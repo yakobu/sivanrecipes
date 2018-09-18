@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import {FlatButton} from "material-ui";
 
 const tool_bar = (props) => (
-    <AppBar style={{background: "#1a237e", position: "fixed", fontFamily: "'Tinos', serif"}}
+    <AppBar style={{background: "#2196f3", position: "fixed", fontFamily: "'Tinos', serif"}}
             title={<span style={{color: "#fff", margin: 10, cursor:"pointer"}}>טעים</span>}
             onTitleClick={props.onTitleClick}
             dir="rtl"
