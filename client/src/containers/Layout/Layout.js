@@ -77,7 +77,6 @@ class Layout extends Component {
             <Aux>
                 {this.props.isAuth? <header>
                     <ToolBar isAuth={this.props.isAuth} click={this.props.onLogout}
-                             label="התנתק"
                              onTitleClick={this.goHomePage}
                              toggle_sidedrawer={this.handleSideDrawerToggle}/>
                     <SideDrawer open={this.state.openSideDrawer}

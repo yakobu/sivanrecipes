@@ -32,7 +32,6 @@ class Recipe extends Component {
                 id: this.props.match.params.id
             }
         }).then((res) => {
-            console.log(res)
             this.setState(
             {
                 loadRecipe: false,

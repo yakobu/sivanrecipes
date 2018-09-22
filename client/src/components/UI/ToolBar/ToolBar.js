@@ -10,7 +10,6 @@ const tool_bar = (props) => (
             dir="rtl"
             showMenuIconButton={props.isAuth}
             onLeftIconButtonClick={props.isAuth ? props.toggle_sidedrawer : null}
-            iconElementRight={props.isAuth ? <FlatButton label={props.label}/> : null}
             onRightIconButtonClick={props.isAuth ? props.click : null}>
     </AppBar>
 );
