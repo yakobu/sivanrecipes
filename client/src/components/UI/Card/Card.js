@@ -82,6 +82,9 @@ const styles = theme => ({
     },
     tags:{
         display: "flex"
+    },
+    content:{
+        whiteSpace: "pre-line"
     }
 });
 
@@ -117,7 +120,7 @@ const RecipeReviewCard = (props) => {
                     <div className={classes.tags} dir="rtl">
                         {tags}
                     </div>
-                    <Typography component="div" dir="rtl">
+                    <Typography component="div" dir="rtl" className={classes.content}>
                         {props.children}
                     </Typography>
                 </CardContent>
