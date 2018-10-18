@@ -109,7 +109,7 @@ const RecipeReviewCard = (props) => {
                             </IconButton> : null
                     }
                     title={props.title}
-                    subheader="September 14, 2016"
+                    subheader={props.author.name}
                 />
                 <CardMedia
                     onClick={props.click}
@@ -124,14 +124,6 @@ const RecipeReviewCard = (props) => {
                         {props.children}
                     </Typography>
                 </CardContent>
-                {/*<CardActions className={classes.actions} disableActionSpacing>*/}
-                    {/*<IconButton aria-label="Add to favorites">*/}
-                        {/*<FavoriteIcon />*/}
-                    {/*</IconButton>*/}
-                    {/*<IconButton aria-label="Share">*/}
-                        {/*<ShareIcon />*/}
-                    {/*</IconButton>*/}
-                {/*</CardActions>*/}
             </Card>
         );
 };
