@@ -124,7 +124,7 @@ const RecipeReviewCard = (props) => {
                         {props.children}
                     </Typography>
                 </CardContent>
-                <div class="sharethis-inline-share-buttons">
+                <div className="sharethis-inline-share-buttons">
                 </div>
 
             </Card>
