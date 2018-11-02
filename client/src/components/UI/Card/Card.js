@@ -18,14 +18,14 @@ import Chip from "../Chip/Chip";
 
 import {
     FacebookShareButton,
-    GooglePlusShareButton,
+    WhatsappShareButton,
     LinkedinShareButton,
     TwitterShareButton,
     EmailShareButton,
 } from 'react-share'
 
 import {
-    FacebookIcon,
+    WhatsappIcon,
     TwitterIcon,
     PinterestIcon,
     EmailIcon
@@ -52,6 +52,10 @@ const styles = theme => ({
     },
     tags:{
         display: "flex"
+    },
+    share:{
+        display: "flex",
+
     },
     content:{
         whiteSpace: "pre-line"
@@ -90,14 +94,20 @@ const RecipeReviewCard = (props) => {
                     <div className={classes.tags} dir="rtl">
                         {tags}
                     </div>
+                    <div className={classes.tags}>
+                        <EmailShareButton url={window.location.href}
+                                          subject={props.title}
+                                          body={props.children}>
+                            <EmailIcon size={32} round={true}/>
+                        </EmailShareButton>
+                        <WhatsappShareButton url={window.location.href}
+                                             title={props.title}>
+                            <WhatsappIcon size={32} round={true}/>
+                        </WhatsappShareButton>
+                    </div>
                     <Typography component="div" dir="rtl" className={classes.content}>
                         {props.children}
                     </Typography>
-                    <EmailShareButton url={window.location.href}
-                                      subject={props.title}
-                                      body={props.children}>
-                        <EmailIcon size={32} round={true}/>
-                    </EmailShareButton>
                 </CardContent>
 
             </Card>
