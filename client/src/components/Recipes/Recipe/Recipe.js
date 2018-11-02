@@ -117,6 +117,7 @@ class Recipe extends Component {
                    id={recipe.id}
                    tags={recipe.tags}
                    author={recipe.author}
+                   body={recipe.body}
                    click={null}
                    editClick={(ev) => this.editRecipeHendler(ev, recipe.id)}
                    editAble={this.props.email === recipe.author.email}

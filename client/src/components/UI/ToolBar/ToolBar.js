@@ -1,7 +1,6 @@
 import React from 'react';
 
 import AppBar from 'material-ui/AppBar';
-import {FlatButton} from "material-ui";
 
 const tool_bar = (props) => (
     <AppBar style={{background: "#2196f3", position: "fixed", fontFamily: "'Tinos', serif"}}

@@ -10,6 +10,7 @@ const recipes = (props) => {
               title={recipe.title}
               key={recipe.id}
               id={recipe.id}
+              body={recipe.body}
               author={recipe.author}
               click={() => props.recipeClick(recipe.id)}
               editClick={(ev) => props.editClick(ev, recipe.id)}

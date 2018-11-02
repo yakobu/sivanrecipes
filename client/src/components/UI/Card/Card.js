@@ -92,13 +92,13 @@ const RecipeReviewCard = (props) => {
                             <div className={classes.shareButton}>
                                 <EmailShareButton
                                     subject={props.title}
-                                    body={props.children}>
+                                    body={props.body}>
                                     <EmailIcon size={32} round={true}/>
                                 </EmailShareButton>
                             </div>
                             <div className={classes.shareButton}>
                                 <WhatsappShareButton url={window.location.href}
-                                                     title={props.title}
+                                                     title={props.title + "\n" + props.body}
                                                      separator={"\n"}>
                                     <WhatsappIcon size={32} round={true}/>
                                 </WhatsappShareButton>
