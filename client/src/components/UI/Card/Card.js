@@ -4,32 +4,22 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import EditIcon from '@material-ui/icons/Edit';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Chip from "../Chip/Chip";
 
 
 import {
-    FacebookShareButton,
     WhatsappShareButton,
-    LinkedinShareButton,
-    TwitterShareButton,
     EmailShareButton,
+    WhatsappIcon,
+    EmailIcon
 } from 'react-share'
 
-import {
-    WhatsappIcon,
-    TwitterIcon,
-    PinterestIcon,
-    EmailIcon
-} from 'react-share';
+import {MobileView} from "react-device-detect"
 
 const styles = theme => ({
     card: {
@@ -56,6 +46,9 @@ const styles = theme => ({
     share:{
         display: "flex",
 
+    },
+    shareButton:{
+      padding: "3px",
     },
     content:{
         whiteSpace: "pre-line"
@@ -94,17 +87,24 @@ const RecipeReviewCard = (props) => {
                     <div className={classes.tags} dir="rtl">
                         {tags}
                     </div>
-                    <div className={classes.tags}>
-                        <EmailShareButton url={window.location.href}
-                                          subject={props.title}
-                                          body={props.children}>
-                            <EmailIcon size={32} round={true}/>
-                        </EmailShareButton>
-                        <WhatsappShareButton url={window.location.href}
-                                             title={props.title}>
-                            <WhatsappIcon size={32} round={true}/>
-                        </WhatsappShareButton>
-                    </div>
+                    <MobileView>
+                        <div className={classes.share}>
+                            <div className={classes.shareButton}>
+                                <EmailShareButton
+                                    subject={props.title}
+                                    body={props.children}>
+                                    <EmailIcon size={32} round={true}/>
+                                </EmailShareButton>
+                            </div>
+                            <div className={classes.shareButton}>
+                                <WhatsappShareButton url={window.location.href}
+                                                     title={props.title}
+                                                     separator={"\n"}>
+                                    <WhatsappIcon size={32} round={true}/>
+                                </WhatsappShareButton>
+                            </div>
+                        </div>
+                    </MobileView>
                     <Typography component="div" dir="rtl" className={classes.content}>
                         {props.children}
                     </Typography>
