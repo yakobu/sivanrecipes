@@ -97,7 +97,7 @@ const RecipeReviewCard = (props) => {
                                 </EmailShareButton>
                             </div>
                             <div className={classes.shareButton}>
-                                <WhatsappShareButton url={window.location.href}
+                                <WhatsappShareButton url={props.body}
                                                      title={props.title}
                                                      separator={"\n"}>
                                     <WhatsappIcon size={32} round={true}/>
