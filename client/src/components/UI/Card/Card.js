@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import EditIcon from '@material-ui/icons/Edit';
 import Chip from "../Chip/Chip";
+import Share from "../ShareButton/ShareButton";
+
 
 
 import {
@@ -87,25 +89,26 @@ const RecipeReviewCard = (props) => {
                     <div className={classes.tags} dir="rtl">
                         {tags}
                     </div>
-                    <MobileView>
-                        <div className={classes.share}>
-                            <div className={classes.shareButton}>
-                                <EmailShareButton
-                                    url={""}
-                                    subject={props.title}
-                                    body={props.body}>
-                                    <EmailIcon size={32} round={true}/>
-                                </EmailShareButton>
-                            </div>
-                            <div className={classes.shareButton}>
-                                <WhatsappShareButton url={props.img}
-                                                     title={props.title}
-                                                     separator={"\n"}>
-                                    <WhatsappIcon size={32} round={true}/>
-                                </WhatsappShareButton>
-                            </div>
-                        </div>
-                    </MobileView>
+                    {/*<MobileView>*/}
+                        {/*<div className={classes.share}>*/}
+                            {/*<div className={classes.shareButton}>*/}
+                                {/*<EmailShareButton*/}
+                                    {/*url={""}*/}
+                                    {/*subject={props.title}*/}
+                                    {/*body={props.body}>*/}
+                                    {/*<EmailIcon size={32} round={true}/>*/}
+                                {/*</EmailShareButton>*/}
+                            {/*</div>*/}
+                            {/*<div className={classes.shareButton}>*/}
+                                {/*<WhatsappShareButton url={window.location.href}*/}
+                                                     {/*title={props.title}*/}
+                                                     {/*separator={"\n"}>*/}
+                                    {/*<WhatsappIcon size={32} round={true}/>*/}
+                                {/*</WhatsappShareButton>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                    {/*</MobileView>*/}
+                    <Share/>
                     <Typography component="div" dir="rtl" className={classes.content}>
                         {props.children}
                     </Typography>
