@@ -20,6 +20,13 @@ app.use(function(req, res, next) {
     next();
 });
 
+// Redirect to https if request is set to http
+app.use(function(request, response){
+  if(request.protocol === "http"){
+    response.redirect("https://" + request.headers.host + request.url);
+  }
+});
+
 
 // Log all request to terminal
 app.use(require('morgan')('dev'));
