@@ -21,11 +21,12 @@ app.use(function(req, res, next) {
 });
 
 // Redirect to https if request is set to http
-app.use(function(request, response){
-  if(request.protocol === "http"){
-    response.redirect("https://" + request.headers.host + request.url);
-  }
-});
+//app.use(function(request, response, next){
+//  if(request.protocol === "http"){
+//    console.log("https://" + request.headers.host + request.url)
+//    response.redirect("https://" + request.headers.host + request.url);
+//  }
+//});
 
 
 // Log all request to terminal
