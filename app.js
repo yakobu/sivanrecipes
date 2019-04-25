@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 
 const routes = require('./routes');
 
+const enforce = require('express-sslify');
+
 require('./models/User');
 require('./models/Recipe');
 require('./models/Comment');
@@ -31,6 +33,10 @@ app.use(function(req, res, next) {
 //    next();
 //  }
 //});
+
+if (process.env.PRODUCTION_MODE){
+    app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
 
 
 // Log all request to terminal
