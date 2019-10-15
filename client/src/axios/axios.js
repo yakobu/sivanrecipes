@@ -8,6 +8,10 @@ export const axiosUsersInstance = axios.create({
     baseURL: apiURL + "/users",
 });
 
+export const axiosAdminInstance = axios.create({
+    baseURL: apiURL + "/admin",
+});
+
 export const axiosRecipesInstance = axios.create({
     baseURL: apiURL + "/recipes",
 });

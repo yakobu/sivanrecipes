@@ -7,6 +7,7 @@ import Home from "../components/Home/Home"
 import Auth from '../components/Auth/Auth'
 import RecipeForm from '../components/Recipes/RecipeForm/RecipeForm'
 import Recipe from '../components/Recipes/Recipe/Recipe'
+import ChangePasswordForm from '../components/Admin/ChangePasswordForm'
 import {connect} from 'react-redux'
 
 import * as actions from '../store/actions'
@@ -45,6 +46,11 @@ class App extends Component {
                                exact
                                component={Recipe}/>
                         : null}
+                    {this.props.isAdmin ?
+                        <Route path="/admin"
+                               exact
+                               component={ChangePasswordForm}/>
+                        : null}
                     <Redirect to={this.props.isAuth ? "/home" : "/auth"}/>}
                 </Switch>
             );
@@ -63,7 +69,8 @@ class App extends Component {
 const mapStateToProps = state => (
     {
         isAuth: state.auth.token != null,
-        isLoading: state.auth.loading
+        isLoading: state.auth.loading,
+        isAdmin: state.auth.token != null && state.user.is_admin,
     }
 );
 

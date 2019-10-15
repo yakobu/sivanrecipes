@@ -6,6 +6,7 @@ const initialState = {
     image: null,
     email: null,
     name: null,
+    is_admin: null,
     id: null,
 };
 
@@ -24,6 +25,7 @@ const userReducer = (state = initialState, action) => {
                 image: action.image,
                 email: action.email,
                 name: action.name,
+                is_admin: action.is_admin,
                 id: action.id,
                 error: null,
                 loading: false,
@@ -41,6 +43,7 @@ const userReducer = (state = initialState, action) => {
                 image: null,
                 email: null,
                 name: null,
+                is_admin: null,
                 id: null,
             };
         default:

@@ -63,6 +63,11 @@ class Layout extends Component {
         this.setState({openSideDrawer: false});
     };
 
+    onSideDrawerGoAdminHandler = () => {
+        this.props.history.push("/admin");
+        this.setState({openSideDrawer: false});
+    };
+
     onSideDrawerMyRecipes = () => {
         this.props.history.push("/home");
         this.props.resetFilter();
@@ -97,6 +102,7 @@ class Layout extends Component {
                             <MenuItem dir={"rtl"} onClick={this.onSideDrawerMyRecipes}>מתכונים שלי</MenuItem>
                             <MenuItem dir={"rtl"} onClick={this.onSideDrawerAddRecipeHendler}>הוסף מתכון</MenuItem>
                             <MenuItem dir={"rtl"} onClick={this.onSideDrawerGoHomeHendler}>דף הבית</MenuItem>
+                            {this.props.isUserAdmin? <MenuItem dir={"rtl"} onClick={this.onSideDrawerGoAdminHandler}>מנהל</MenuItem>: null}
                             <MenuItem dir={"rtl"} style={{color: "red"}} onClick={this.onSideDrawerLogoutAction}>התנתק</MenuItem>
                             <img src={logo} alt="LOGO" style={{width: "100%", position: "fixed", bottom: "20px"}}/>
                         </div>
@@ -118,6 +124,7 @@ const mapStateToProps = (state) => (
         profileImg: state.user.image,
         userName: state.user.name,
         userId: state.user.id,
+        isUserAdmin: state.user.is_admin,
     }
 );
 

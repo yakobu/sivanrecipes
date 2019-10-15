@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema(
             unique: true,
             index: true
         },
+        is_admin:{
+            type: Boolean,
+            default: false
+        },
         bio: String,
         image: String,
         hash: String,
@@ -57,7 +61,8 @@ UserSchema.methods.toAuthJSON = function () {
         token: this.generateJWT(),
         bio: this.bio,
         image: this.image || 'https://static.productionready.io/images/smiley-cyrus.jpg',
-        expirationTime: expiresIn
+        expirationTime: expiresIn,
+        is_admin: this.is_admin
     };
 };
 
@@ -67,7 +72,8 @@ UserSchema.methods.toProfileJSON = function () {
         name: this.name,
         bio: this.bio,
         image: this.image || 'https://static.productionready.io/images/smiley-cyrus.jpg',
-        email: this.email
+        email: this.email,
+        is_admin: this.is_admin
     };
 };
 

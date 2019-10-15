@@ -115,7 +115,7 @@ const mapStateToProps = state => (
 const mapDisptchTopProps = dispatch => (
     {
         changePage: (page) => dispatch(actions.changeOffset(page)),
-        changeSelectedFilter: (newTags)=> dispatch(actions.selectFilter(newTags))
+                                                                                                                                                                                                            changeSelectedFilter: (newTags)=> dispatch(actions.selectFilter(newTags))
     }
 );
 
