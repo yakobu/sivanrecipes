@@ -57,4 +57,21 @@ app.use((err, req, res) => {
 
 const server = app.listen(process.env.PORT || 3001, () => {
     console.log('Listening on port ' + server.address().port)
+    console.log(`Dyno set to: ${process.env.DYNO_URL}`)
+
+    // Keep herokuapp awake
+    if (process.env.DYNO_URL)
+    {
+        var https = require("https");
+        setInterval(function() {
+            try{
+                console.log(`Ping to Dino ${process.env.DYNO_URL}`)
+                https.get(process.env.DYNO_URL);
+            }
+            catch(e){
+                console.error(e)
+                console.log("Ping interval is still activated")
+            }
+        }, 300000); // every 5 minutes (300000)
+    }
 });
