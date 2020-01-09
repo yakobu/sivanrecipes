@@ -12,6 +12,10 @@ export const axiosAdminInstance = axios.create({
     baseURL: apiURL + "/admin",
 });
 
+export const axiosNotificationsInstance = axios.create({
+    baseURL: apiURL + "/notifications",
+});
+
 export const axiosRecipesInstance = axios.create({
     baseURL: apiURL + "/recipes",
 });
