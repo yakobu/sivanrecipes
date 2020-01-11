@@ -2,11 +2,12 @@ const router = require('express').Router();
 
 const webpush = require("web-push");
 
-webpush.setGCMAPIKey("AIzaSyD6XYoeL6saW9IAH1MkiEyPnquqo_3neD0");
+webpush.setGCMAPIKey();
 webpush.setVapidDetails(
-    "mailto:ronenya4321@gmail.com",
-    "BGFHkDMtwtZX9CILiJUypW7-G-LBPbAsu1OkB4YyOqsF58VGUg3t_P1VARwPfMmy7j8zpVh6qc1u7IU9me8DM28",
-    "LZLZdU_ZoMj3z8c6Fi9WUOWO20t-dnJdGONqlLRj5Lw"
+    `mailto:${process.env.APP_EMAIL}`,
+    process.env.GOOGLE_API_KEY,
+    process.env.PUBLIC_VAPID_KEY,
+    process.env.PRIVATE_VAPID_KEY
 );
 
 
