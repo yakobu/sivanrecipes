@@ -7,25 +7,6 @@ import store from './store'
 import App from './containers/App';
 import './index.css';
 
-
-
-import {
-    isPushNotificationSupported,
-    sendNotification,
-    initializePushNotifications,
-    registerServiceWorker
-} from "./push-notifications.js";
-//
-const pushNotificationSuported = isPushNotificationSupported();
-if (pushNotificationSuported) {
-    registerServiceWorker();
-    initializePushNotifications().then(function(consent){
-        if(consent === 'granted') {
-            sendNotification();
-        }
-    });
-}
-
 const app = (
     <Provider store={store}>
         <BrowserRouter>
@@ -33,7 +14,6 @@ const app = (
         </BrowserRouter>
     </Provider>
 );
-
 
 
 ReactDOM.render(app,

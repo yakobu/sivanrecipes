@@ -1,45 +1,72 @@
-function isPushNotificationSupported() {
-    return "serviceWorker" in navigator && "PushManager" in window;
+import {axiosNotificationsInstance} from "./axios/axios";
+
+const vapidPublicKey = process.env.REACT_APP_PUBLIC_VAPID_KEY;
+const convertedVapidKey = urlBase64ToUint8Array(vapidPublicKey);
+
+function urlBase64ToUint8Array(base64String) {
+    const padding = "=".repeat((4 - base64String.length % 4) % 4)
+    const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/")
+
+    const rawData = window.atob(base64)
+    const outputArray = new Uint8Array(rawData.length)
+
+    for (let i = 0; i < rawData.length; ++i) {
+        outputArray[i] = rawData.charCodeAt(i)
+    }
+    return outputArray
 }
 
 
-function initializePushNotifications() {
-    // request user grant to show notification
-    return Notification.requestPermission(function(result) {
-        return result;
+export function subscribePush() {
+    navigator.serviceWorker.ready.then(registration => {
+        if (!registration.pushManager) {
+            alert("Push Unsupported");
+            return
+        }
+
+        registration.pushManager.getSubscription().then(subscriptions => {
+            const isSubscribed = !(subscriptions === null);
+            if (isSubscribed) {
+                console.log("User already Subscribed to web push");
+                return;
+            }
+
+            registration.pushManager
+                .subscribe({
+                    userVisibleOnly: true, //Always display notifications
+                    applicationServerKey: convertedVapidKey
+                })
+                .then(subscription => {
+                    const token = localStorage.getItem("token");
+                    axiosNotificationsInstance.post("/register", subscription, {
+                        headers: {
+                            Authorization: "Bearer " + token
+                        },
+                    }).then(response => {
+                        console.log(response)
+                    }).catch(err => {
+                        console.log(err);
+                    });
+                }).catch(err => console.error("Push subscription error: ", err));
+        });
+    })
+}
+
+
+function subscribeToPullMessages() {
+    const pushNotificationSuported = "serviceWorker" in navigator && "PushManager" in window;
+
+    if (!pushNotificationSuported) {
+        throw Error("Push notifications is not supported")
+    }
+
+    // Register service worker.
+    navigator.serviceWorker.register("/sw.js");
+    Notification.requestPermission(result => {
+        if (result === 'granted') {
+            subscribePush()
+        }
     });
 }
 
-
-function sendNotification() {
-    const img = "https://spyna.it/icons/android-icon-192x192.png";
-    const text = "Take a look at this brand new t-shirt!";
-    const title = "New Product Available";
-    const options = {
-        body: text,
-        icon: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
-        vibrate: [200, 100, 200],
-        tag: "new-product",
-        image: img,
-        badge: "https://spyna.it/icons/android-icon-192x192.png",
-        actions: [{action: "Detail", title: "View", icon: "https://via.placeholder.com/128/ff0000"}]
-    };
-
-    navigator.serviceWorker.ready.then(function (serviceWorker) {
-        serviceWorker.showNotification(title, options);
-    });
-}
-
-
-function registerServiceWorker() {
-    navigator.serviceWorker.register("/sw.js").then(function(swRegistration) {
-        //you can do something with the service wrker registration (swRegistration)
-    });
-}
-
-export {
-    isPushNotificationSupported,
-    initializePushNotifications,
-    registerServiceWorker,
-    sendNotification
-};
+export default subscribeToPullMessages;

@@ -1,9 +1,18 @@
 const path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
+const webpush = require("web-push");
 const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
 
 const routes = require('./routes');
+
+webpush.setGCMAPIKey(process.env.GOOGLE_API_KEY,);
+webpush.setVapidDetails(
+    `mailto:${process.env.APP_EMAIL}`,
+    process.env.REACT_APP_PUBLIC_VAPID_KEY,
+    process.env.REACT_APP_PRIVATE_VAPID_KEY
+);
+
 
 require('./models/User');
 require('./models/Recipe');

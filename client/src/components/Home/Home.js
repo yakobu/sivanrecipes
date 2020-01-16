@@ -11,6 +11,7 @@ import Paging from '../UI/Paging/Paging'
 import * as actions from '../../store/actions'
 
 import Classes from './Home.css'
+import subscribeToPullMessages from "../../push-notifications";
 
 class Home extends Component {
 
@@ -18,7 +19,8 @@ class Home extends Component {
         const scrollerPosition = localStorage.getItem('homeScroller') || 0;
         this.setScrollerPosition(scrollerPosition);
 
-        window.addEventListener("scroll", this.handleScroll, true)
+        window.addEventListener("scroll", this.handleScroll, true);
+        subscribeToPullMessages()
     }
 
     setScrollerPosition(posotion) {
