@@ -17,6 +17,7 @@ webpush.setVapidDetails(
 require('./models/User');
 require('./models/Recipe');
 require('./models/Comment');
+require('./models/Subscription');
 require('./config/passport');
 
 const app = express();

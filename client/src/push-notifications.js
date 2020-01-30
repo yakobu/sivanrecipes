@@ -25,12 +25,6 @@ export function subscribePush() {
         }
 
         registration.pushManager.getSubscription().then(subscriptions => {
-            const isSubscribed = !(subscriptions === null);
-            if (isSubscribed) {
-                console.log("User already Subscribed to web push");
-                return;
-            }
-
             registration.pushManager
                 .subscribe({
                     userVisibleOnly: true, //Always display notifications

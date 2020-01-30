@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const SubscriberSchema = new Schema({
-    endpoint: String,
+    endpoint: {
+        type: String,
+        unique: true
+    },
     keys: Schema.Types.Mixed,
     createDate: {
         type: Date,
