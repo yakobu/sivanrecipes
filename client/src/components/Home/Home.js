@@ -18,8 +18,11 @@ class Home extends Component {
     componentDidMount() {
         const scrollerPosition = localStorage.getItem('homeScroller') || 0;
         this.setScrollerPosition(scrollerPosition);
-
+        
+        // setup scroll saving
+        this.isScrolling = null;
         window.addEventListener("scroll", this.handleScroll, true);
+        
         subscribeToPullMessages()
     }
 
@@ -33,7 +36,13 @@ class Home extends Component {
     }
 
     handleScroll(event){
-        localStorage.setItem('homeScroller', event.srcElement.scrollTop)
+	    // Clear our timeout throughout the scroll
+        window.clearTimeout( this.isScrolling );
+        // Set a timeout to run after scrolling ends
+        this.isScrolling = setTimeout(() => {
+            // Run the callback
+            localStorage.setItem('homeScroller', event.srcElement.scrollTop)
+        }, 100);
     };
 
     addRecipeHendler = () => {
