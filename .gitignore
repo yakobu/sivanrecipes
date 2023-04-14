@@ -3,3 +3,4 @@ client/node_modules
 client/build
 .idea
 client/.idea
+settings.bash
